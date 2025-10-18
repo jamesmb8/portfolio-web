@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Contact — James Briggs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/assets/css/base.css">
+</head>
+<body>
+  <div class="blobs" aria-hidden="true">
+    <div class="blob" id="blob1" style="top:-12vh;left:-10vw"></div>
+    <div class="blob b2" id="blob2" style="bottom:-18vh;right:-12vw"></div>
+  </div>
+
+  <header>
+    <div class="wrap">
+      <nav>
+        <a href="home.html" class="brand">James Briggs</a>
+        <div class="nav-links">
+          <span class="nav-marker" id="navMarker" aria-hidden="true"></span>
+          <a href="index.html" data-nav>Home</a>
+          <a href="skills.html" data-nav>Skills</a>
+          <a href="contact.html" data-nav aria-current="page">Contact</a>
+          <a class="btn" href="/assets/softwareCV.pdf" download>Resume</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Contact</h1>
+    <p class="lead">Open to Graduate Software Engineer roles starting Summer 2026.</p>
+
+    <section class="card" aria-label="Contact links">
+      <div class="row">
+        <img src="/assets/email.png" width="18" height="18" alt=""/> <a href="mailto:james.briggs1109@gmail.com">james.briggs1109@gmail.com</a>
+      </div>
+      <div class="row" style="margin-top:12px">
+        <img src="/assets/linkedin.png" width="18" height="18" alt=""/> <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+      <div class="row" style="margin-top:12px">
+        <img src="/assets/github.png" width="18" height="18" alt=""/> <a href="https://github.com/Jamesmb8" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span>© <span id="year"></span> James Briggs</span>
+      <span class="muted">Let’s build something great.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    // Blobs
+    const prefersReduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!prefersReduced){
+      const lerp=(a,b,t)=>a+(b-a)*t; let y=0,x=0;
+      const onScroll=()=>{ const s=scrollY||0; y=lerp(y,s*0.12,0.1); x=lerp(x,s*0.06,0.1);
+        document.getElementById('blob1').style.transform=`translate3d(${x}px,${y}px,0)`;
+        document.getElementById('blob2').style.transform=`translate3d(${-s*0.08}px,${-s*0.16}px,0)`; requestAnimationFrame(onScroll); };
+      requestAnimationFrame(onScroll);
+    }
+
+    // Nav marker
+    const marker=document.getElementById('navMarker'); const navLinks=[...document.querySelectorAll('[data-nav]')];
+    function moveMarker(el){ if(!el) return; const r=el.getBoundingClientRect(); const p=el.parentElement.getBoundingClientRect();
+      marker.style.transform=`translateX(${r.left-p.left+4}px)`; marker.style.width=`${r.width-8}px`; }
+    const current=document.querySelector('[data-nav][aria-current="page"]'); moveMarker(current);
+    navLinks.forEach(a=>{ a.addEventListener('mouseenter',()=>moveMarker(a)); a.addEventListener('mouseleave',()=>moveMarker(current)); });
+    addEventListener('resize',()=>moveMarker(current));
+  </script>
+  <script src="/assets/js/app.js"></script>
+
+</body>
+
+
+</html>

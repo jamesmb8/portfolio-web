@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Skills — James Briggs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/assets/css/base.css">
+</head>
+<body>
+  <!-- Scroll progress bar -->
+  <div class="progress" aria-hidden="true"><div class="bar" id="progressBar"></div></div>
+
+  <!-- Blobs -->
+  <div class="blobs" aria-hidden="true">
+    <div class="blob" id="blob1" style="top:-12vh;left:-10vw"></div>
+    <div class="blob b2" id="blob2" style="bottom:-18vh;right:-12vw"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="wrap">
+      <nav>
+        <a href="index.html" class="brand">James Briggs</a>
+        <div class="nav-links">
+          <span class="nav-marker" id="navMarker" aria-hidden="true"></span>
+          <a href="index.html" data-nav>Home</a>
+          <a href="skills.html" data-nav aria-current="page">Skills</a>
+          <a href="contact.html" data-nav>Contact</a>
+          <a class="btn" href="/assets/softwareCV.pdf" download>Resume</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Skills & Stack</h1>
+    <p class="lead">What I use to design, build, ship, and maintain reliable apps.</p>
+
+    <!-- Sticky sub-nav (scroll-spy) -->
+    <nav class="subnav" aria-label="Skills sections">
+      <a href="#core" data-spy>Core</a>
+      <a href="#tooling" data-spy>Tooling</a>
+      <a href="#highlights" data-spy>Highlights</a>
+    </nav>
+
+    <!-- Core -->
+    <section id="core">
+      <h2>Core</h2>
+      <div class="grid">
+        <div class="card reveal"><strong>Languages</strong><br/>Dart, C#, JavaScript, SQL</div>
+        <div class="card reveal"><strong>Frameworks</strong><br/>Flutter, .NET, Firebase</div>
+        <div class="card reveal"><strong>Tools</strong><br/>Git/GitHub, Android Studio, Xcode</div>
+        <div class="card reveal"><strong>Practices</strong><br/>REST APIs, Agile, Testing, CI/CD</div>
+      </div>
+    </section>
+
+    <!-- Pinned tooling marquee -->
+    <section id="tooling" class="marquee-pin" aria-label="Tooling">
+      <h2 class="reveal">Tooling</h2>
+      <div class="marquee-wrap">
+        <div class="marquee-track" id="marqueeTrack">
+          <span class="pill">Flutter</span>
+          <span class="pill">Dart</span>
+          <span class="pill">C#</span>
+          <span class="pill">.NET</span>
+          <span class="pill">Firebase</span>
+          <span class="pill">Firestore</span>
+          <span class="pill">Firebase Auth</span>
+          <span class="pill">FCM</span>
+          <span class="pill">Git/GitHub</span>
+          <span class="pill">Android Studio</span>
+          <span class="pill">Xcode</span>
+          <span class="pill">REST APIs</span>
+          <span class="pill">CI/CD</span>
+          <span class="pill">Testing</span>
+          <!-- loop padding for smoothness -->
+          <span class="pill">Flutter</span>
+          <span class="pill">Dart</span>
+          <span class="pill">C#</span>
+          <span class="pill">.NET</span>
+          <span class="pill">Firebase</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights -->
+    <section id="highlights">
+      <h2>Highlights</h2>
+      <div class="grid">
+        <div class="card reveal">Clean architecture, modularisation, testability.</div>
+        <div class="card reveal">App performance budgets and profiling.</div>
+        <div class="card reveal">Accessible, responsive UI with subtle motion.</div>
+        <div class="card reveal">Modern, IOS style applications.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span>© <span id="year"></span> James Briggs</span>
+      <span class="muted">Built with vanilla HTML/CSS/JS.</span>
+    </div>
+  </footer>
+
+  <!-- All behavior is in the shared bundle -->
+  <script src="/assets/js/app.js"></script>
+</body>
+</html>

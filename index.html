@@ -1,189 +1,249 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-    <title>Portfolio Website</title>
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">James Briggs</div>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>James Briggs — Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+ <link rel="stylesheet" href="/assets/css/base.css">
 
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about"onclick="toggleMenu()">About</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact"onclick="toggleMenu()">Contact</a></li>
+</head>
+<body>
+  <!-- Blobs -->
+  <div class="blobs" aria-hidden="true">
+    <div class="blob" id="blob1" style="top:-12vh;left:-10vw"></div>
+    <div class="blob b2" id="blob2" style="bottom:-18vh;right:-12vw"></div>
+  </div>
+
+  <!-- Header/Nav -->
+  <header>
+    <div class="wrap">
+      <nav>
+        <a href="home.html" class="brand">James Briggs</a>
+        <div class="nav-links" id="navLinks">
+          <span class="nav-marker" id="navMarker" aria-hidden="true"></span>
+          <a href="home.html" data-nav aria-current="page">Home</a>
+          <a href="skills.html" data-nav>Skills</a>
+          <a href="contact.html" data-nav>Contact</a>
+          <a class="btn" href="/assets/softwareCV.pdf" download>Resume</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="wrap" id="home">
+    <h1>Software Engineer</h1>
+    <p class="lead">Final-year Software Engineering student building mobile and web apps with Flutter, Firebase, and C#. Available for Graduate roles from Summer 2026.</p>
+    <p class="row" style="margin-top:18px">
+      <a class="btn primary" href="#projects">View Projects</a>
+      <a class="btn" href="https://github.com/Jamesmb8" target="_blank" rel="noreferrer">GitHub</a>
+    </p>
+  </section>
+
+  <!-- Projects Section Intro -->
+<section class="wrap" style="padding-bottom:0">
+  <h2>Projects</h2>
+ 
+</section>
+
+
+  <!-- Projects: vertical scroll drives horizontal motion (no extra cards below) -->
+  <section id="projects" class="pinned" aria-label="Featured Projects">
+    <div class="pin-wrap">
+      <div class="track" id="projectsTrack">
+        <!-- Panel 1: Allergy -->
+        <article class="panel" aria-labelledby="p1-title" tabindex="0">
+          <div class="visual">
+            <div class="phone-frame">
+              <!-- use YOUR neat screenshot file here -->
+              <img src="/assets/allergyapp.PNG" alt="Allergy Scanner app home screen"/>
+            </div>
+          </div>
+          <div class="content">
+            <h2 id="p1-title" style="margin:0 0 8px">Allergy Scanner App</h2>
+            <p class="muted">Flutter + Firebase app that scans ingredients & barcodes to flag allergens. OCR, camera, notifications, TestFlight.</p>
+            <div class="chips"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Firebase</span><span class="chip">OCR</span></div>
+            <div class="row">
+              <button class="btn cta" data-open="modal-allergy">
+                View details
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-left:8px">
+                  <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            
+          </div>
+        </article>
+
+        <!-- Panel 2: Kerridge -->
+        <article class="panel" aria-labelledby="p2-title" tabindex="0">
+          <div class="visual">
+            <div class="laptop-frame">
+              <img src="/assets/kerridgelorry.png" alt="Kerridge Optimisation App interface"/>
+            </div>
+          </div>
+          
+          <div class="content">
+            <h2 id="p2-title" style="margin:0 0 8px">Kerridge Optimisation App</h2>
+            <p class="muted">Visualise and optimise vehicle packing with performance zones for faster decisions.</p>
+            <div class="chips"><span class="chip">Data viz</span><span class="chip">Client collab</span><span class="chip">SDLC</span></div>
+            <div class="row">
+              <button class="btn cta" data-open="modal-kerridge">
+                View details
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-left:8px">
+                  <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            
+          </div>
+        </article>
+
+        <!-- Panel 3: Travel (Upcoming) -->
+        <article class="panel" aria-labelledby="p3-title" tabindex="0">
+          <div class="visual" style="position:relative">
+            <span class="badge" style="position:absolute;top:14px;left:14px">Upcoming</span>
+            <div class="phone-frame" style="background:#f2f6ff;">
+              <svg width="44%" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M3 6h18M3 12h18M3 18h18" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="content">
+            <h2 id="p3-title" style="margin:0 0 8px">Travel Optimisation (FYP)</h2>
+            <p class="muted">Compares transport modes to find the fastest/cheapest with CO₂ impact using Google Maps & TransportAPI.</p>
+            <div class="chips"><span class="chip">Flutter</span><span class="chip">Google Maps</span><span class="chip">TransportAPI</span></div>
+            <div class="row">
+              <button class="btn cta" data-open="modal-travel">
+                View details
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="margin-left:8px">
+                  <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <span>© <span id="year"></span> James Briggs</span>
+      <span class="muted">Built with vanilla HTML/CSS/JS + a pinned horizontal scroll.</span>
+    </div>
+  </footer>
+
+  <!-- Modals (same as before; left as-is) -->
+  <div class="modal" id="modal-allergy" role="dialog" aria-modal="true" aria-labelledby="allergy-title" aria-hidden="true">
+    <div class="dialog">
+      <header class="wrap" style="display:flex;justify-content:space-between;align-items:center">
+        <h3 id="allergy-title" style="margin:8px 0">Allergy Scanner App</h3>
+        <button class="close" data-close>Close</button>
+      </header>
+      <div class="wrap" style="padding-bottom:18px">
+        <div class="chips"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Firebase (Auth, Firestore, Storage, FCM)</span><span class="chip">OCR</span><span class="chip">Camera Access</span><span class="chip">Contact Access</span></div>
+       
+        <h4>Overview</h4>
+  <p>
+    The Allergy Scanner App helps users quickly identify allergens in food products 
+    by scanning ingredient lists. It’s built in <strong>Flutter</strong> 
+    with <strong>Firebase</strong> for real-time data, authentication, and notifications.
+    Designed to look and feel like a <strong>modern iOS app</strong>, the interface uses 
+    clean typography, soft shadows, and gesture-based navigation for an Apple-like experience.
+  </p>
+
+  <ul>
+    <li>OCR for ingredient list scanning</li>
+    <li>Personal scan history with quick sharing</li>
+    <li>Voice search and notification reminders for allergens</li>
+    <li>Secure Firebase Authentication and Firestore integration</li>
+  </ul>
+
+  <p>
+    The app has been tested through <strong>TestFlight</strong> and is now 
+    <strong>available on the App Store</strong> for iPhone users.
+  </p>
+        <p><a class="btn" href="https://github.com/Jamesmb8" target="_blank" rel="noreferrer">Repository</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-kerridge" role="dialog" aria-modal="true" aria-labelledby="kerridge-title" aria-hidden="true">
+    <div class="dialog">
+      <header class="wrap" style="display:flex;justify-content:space-between;align-items:center">
+        <h3 id="kerridge-title" style="margin:8px 0">Kerridge Optimisation App</h3>
+        <button class="close" data-close>Close</button>
+      </header>
+      <div class="wrap" style="padding-bottom:18px">
+        <div class="chips"><span class="chip">Data visualisation</span><span class="chip">Client collaboration</span><span class="chip">Performance zones</span><span class="chip">Algorithm Design</span></div>
+        <h4>Overview</h4>
+<p>
+  Developed a <strong>desktop optimisation tool</strong> for <strong>Kerridge Commercial Systems (KCS)</strong> 
+  that visualises and categorises vehicle loading efficiency. The app allows users to 
+  view package layouts across multiple layers, identify underutilised space, and optimise 
+  vehicle loading performance.
+</p>
+
+<ul>
+  <li>Built in <strong>C# (WPF)</strong> with an interactive, layered 2D lorry visualisation</li>
+  <li>Implemented <strong>rule-based stacking logic</strong> considering weight and height constraints</li>
+  <li>Enabled <strong>dynamic layer selection</strong> and detailed package breakdowns</li>
+  <li>Collaborated directly with <strong>KCS engineers</strong> to refine requirements and usability</li>
+</ul>
+
+<p>
+  The solution provided clear, visual insights into loading efficiency — improving 
+  decision-making for logistics planning and warehouse operations.
+</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-travel" role="dialog" aria-modal="true" aria-labelledby="travel-title" aria-hidden="true">
+    <div class="dialog">
+      <header class="wrap" style="display:flex;justify-content:space-between;align-items:center">
+        <h3 id="travel-title" style="margin:8px 0">Travel Optimisation (Upcoming)</h3>
+        <button class="close" data-close>Close</button>
+      </header>
+      <div class="wrap" style="padding-bottom:18px">
+        <div class="chips">
+          <span class="chip">Flutter</span>
+          <span class="chip">Dart</span>
+          <span class="chip">Google Maps API</span>
+          <span class="chip">TransportAPI</span>
+          <span class="chip">REST APIs</span>
+          <span class="chip">Data Visualisation</span>
+          <span class="chip">Sustainability</span>
+        </div>
+        <h4>Overview</h4>
+        <p>
+          The <strong>Travel Optimisation App</strong> will help users find the <strong>fastest, cheapest, and most sustainable</strong> way 
+          to travel to any destination. It integrates live transport data from <strong>Google Maps</strong> and 
+          <strong>TransportAPI</strong> to compare multiple travel modes — including driving, public transport, and walking — 
+          while estimating <strong>CO₂ emissions</strong> for environmental awareness.
+        </p>
+      
+        <ul>
+          <li>Built with <strong>Flutter</strong> using real-time <strong>REST APIs</strong> for live transport data</li>
+          <li>Displays side-by-side route comparisons with time, cost, and CO₂ metrics</li>
+          <li>Uses <strong>Google Maps Directions API</strong> for route mapping and distance calculations</li>
+          <li>Integrates <strong>TransportAPI</strong> for UK-based public transport times and fares</li>
+          <li>Features a clean, modern UI inspired by Apple’s travel and maps apps</li>
         </ul>
-      </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">James Briggs</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-   
-    <section id="profile">
-     
-      <div class="section__text">
-        <p class="section__text__p1">
-          Hello, my name is James and I am currently studying Software
-          Engineering BSc. Throughout my years in eduction I have always had a
-          strong passion for creating software but also, problem solving and
-          computational-thinking. I thrive on the challenge of turning complex
-          ideas into functional, user-friendly applications and I am always
-          eager to learn and explore new technologies. 
+      
+        <p>
+          Designed as part of my <strong>final-year project</strong> at Sheffield Hallam University, 
+          this app focuses on improving travel efficiency and sustainability awareness for everyday commuters.
         </p>
-        <p class="section__text__p1">
-          I begin programming when I was in secondary school and I was studying
-          computer science at GCSE level. I then studied computer Science at
-          A-Level and would like to showcase my skills in the industry next
-          year. Below I will show a few examples of what I have created. You can press on the buttons below 
-          to acces my Github, LinkedIn, Download my CV and also see my E-Mail
-        </p>
+      </div>
+    </div>
+  </div>
 
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/softwareCV.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
-        </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/james-briggs-719b14329/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/jamesmb8'"
-          />
-        </div>
-      </div>
-    </section>
-    <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#projects'"
-      />
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="assets/BlogPlatform.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Blog Platform</h2>
-            <p>
-              This is a real-time blog platform where users can add friends and
-              post on their timeline.
-            </p>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/jamesmb8/BlogPlatform'"
-              >
-                Github
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="assets/EERpic.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">
-              Energy Efficiency Website
-            </h2>
-            <p>
-              This is a website where landlords or renters can calculate their
-              energy efficiency rating
-            </p>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/jamesmb8/eercalculator/tree/master'"
-              >
-                Github
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="assets/FootballFact.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">
-              Football Fact Finder
-            </h2>
-            <p>
-              This is a windoe forms project using C# to show facts of premier
-              league footballers
-            </p>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/jamesmb8/FootballFactFinder'"
-              >
-                Github
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p>
-            <a href="mailto:james@briggssoftware.co.uk.com"
-              >james@briggssoftware.co.uk</a
-            >
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <script src="script.js"></script>
-  </body>
+  <!-- ONE shared JS file -->
+  <script src="/assets/js/app.js"></script>
+</body>
 </html>
